@@ -16,7 +16,7 @@ export class UsersController {
 
   @Get('/:username')
   getUser(@Param('username') username: string) {
-    return this.userService.getUser(username);
+    return this.userService.findOne(Number(username));
   }
 
   @Post('/')
@@ -26,13 +26,14 @@ export class UsersController {
 
   @Patch('/:username')
   updateUser(
+    @Param('username') username: string,
     @Body() body: { username: string; email: string; password: string },
   ) {
-    return this.userService.updateUser(body);
+    return this.userService.update(Number(username), body);
   }
 
-  @Delete('/users/:username')
+  @Delete('/:username')
   deleteUser(@Param('username') username: string) {
-    return this.userService.deleteUser(username);
+    return this.userService.remove(Number(username));
   }
 }

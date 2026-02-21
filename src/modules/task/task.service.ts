@@ -19,16 +19,16 @@ export class TaskService {
     return this.tasksRepo.find({ relations: ['user'] });
   }
 
-  findOne(id: number) {
+  getTask(id: number) {
     return this.tasksRepo.findOne({ where: { id }, relations: ['user'] });
   }
 
   async update(id: number, updateData: Partial<Task>) {
     await this.tasksRepo.update(id, updateData);
-    return this.findOne(id);
+    return this.getTask(id);
   }
 
-  remove(id: number) {
+  deleteTask(id: number) {
     return this.tasksRepo.delete(id);
   }
 }
