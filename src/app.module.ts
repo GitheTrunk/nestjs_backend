@@ -8,6 +8,7 @@ import { Receipt } from './receipts/entities/receipt.entity';
 import { NotificationsModule } from './notifications/notifications.module';
 import { OrdersModule } from './orders/orders.module';
 import { Order } from './orders/entities/order.entity';
+import { CoreModule } from './core/core.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { Order } from './orders/entities/order.entity';
     ReceiptsModule,
     NotificationsModule,
     OrdersModule,
+    CoreModule,
   ],
   controllers: [AppController],
   providers: [AppService],
