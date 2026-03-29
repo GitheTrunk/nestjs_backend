@@ -5,7 +5,7 @@ export class Order {
 	@PrimaryGeneratedColumn('uuid')
 	id: string;
 
-	@Column({ type: 'datetime' })
+	@Column({ type: 'timestamp' })
 	orderedAt: Date;
 
 	@Column({ type: 'varchar', length: 255 })
