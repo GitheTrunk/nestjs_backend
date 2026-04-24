@@ -3,20 +3,20 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 @Entity('orders')
 export class Order {
 	@PrimaryGeneratedColumn('uuid')
-	id: string;
+	id!: string;
 
 	@Column({ type: 'timestamp' })
-	orderedAt: Date;
+	orderedAt!: Date;
 
 	@Column({ type: 'varchar', length: 255 })
-	customerName: string;
+	customerName!: string;
 
 	@Column({ type: 'int' })
-	quantity: number;
+	quantity!: number;
 
 	@Column({ type: 'float' })
-	totalAmount: number;
+	totalAmount!: number;
 
 	@Column({ type: 'varchar', length: 32, default: 'pending' })
-	status: string;
+	status!: string;
 }
