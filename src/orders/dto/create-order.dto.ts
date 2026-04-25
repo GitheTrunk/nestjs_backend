@@ -2,21 +2,21 @@ import { IsDateString, IsIn, IsInt, IsNotEmpty, IsNumber, IsString, Min } from '
 
 export class CreateOrderDto {
 	@IsDateString()
-	orderedAt: string;
+	orderedAt!: string;
 
 	@IsString()
 	@IsNotEmpty()
-	customerName: string;
+	customerName!: string;
 
 	@IsInt()
 	@Min(1)
-	quantity: number;
+	quantity!: number;
 
 	@IsNumber()
 	@Min(0)
-	totalAmount: number;
+	totalAmount!: number;
 
 	@IsString()
 	@IsIn(['pending', 'paid', 'cancelled'])
-	status: string;
+	status!: string;
 }
