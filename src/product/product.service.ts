@@ -25,6 +25,11 @@ export class ProductService {
     return this.repo.save(product);
   }
 
+  // Challenge
+  findByCategory(categoryId: number) {
+    return this.repo.findBy({ categoryId });
+  }
+
   async update(dto: UpdateProductDto) {
     const product = await this.repo.findOneBy({ id: dto.id });
     if (!product) {

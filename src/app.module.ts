@@ -22,8 +22,8 @@ import { Product } from './product/entities/product.entity';
   imports: [
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      typePaths:[join(process.cwd(), 'src/graphql/schema/*.graphql')], // Schema-first 
-      // autoSchemaFile: join(process.cwd(), 'src/graphql/schema.gql'), // code-first 
+      // typePaths:[join(process.cwd(), 'src/graphql/schema/*.graphql')], // Schema-first 
+      autoSchemaFile: join(process.cwd(), 'src/graphql/schema.gql'), // code-first 
     }),
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
